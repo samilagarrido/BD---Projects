@@ -40,17 +40,23 @@ CREATE INDEX idx_aluno_idade ON aluno (idade);
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
---c) SELECT * FROM aluno WHERE idade > 27 AND cre < 3.0
+-- c) SELECT * FROM aluno WHERE idade > 27 AND cre < 3.0
 
---Índice Composto B-Tree
+-- Índice Composto B-Tree
+CREATE INDEX idx_aluno_idade_cre ON aluno (idade, cre);
 
-CREATE INDEX idx_aluno_cre_idade ON aluno (cre, idade);
+-- Consulta com múltiplas condições AND usando condições de range
+-- Índice composto permite filtrar eficientemente por ambas as colunas
+-- Ordem otimizada: IDADE primeiro por ter maior seletividade esperada
+-- idade > 27 provavelmente filtra menos registros que cre < 3.0
+-- Permite ao PostgreSQL usar o índice de forma mais eficiente
 
--- consulta com múltiplas condições AND
--- índice composto permite filtrar eficientemente por ambas as colunas
--- ordem otimizada: CRE primeiro por ter maior seletividade
--- CRE (0.0-4.0) tem menos valores distintos que idade, sendo mais seletivo para cre < 3.0
--- permite ao PostgreSQL filtrar primeiro pela condição mais restritiva
+--porém ao analisar os dados poderia ser também:
+
+--CREATE INDEX idx_aluno_cre_idade ON aluno (cre, idade);
+
+-- Ordem: CRE primeiro assumindo que cre < 3.0 é mais seletivo
+-- (válido se a maioria dos alunos tiver CRE >= 3.0)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
