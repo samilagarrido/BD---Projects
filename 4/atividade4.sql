@@ -65,8 +65,9 @@ CREATE INDEX idx_aluno_cre_idade ON aluno (cre, idade);
 -- Mas geralmente não é necessário para agregações simples
 
 --mas se for preciso criar o índice, ficaria assim:
+--alterei o nome do índice para evitar duplicidade com a index da letra b)
 
-CREATE INDEX idx_aluno_idade ON aluno (idade);
+CREATE INDEX idx_aluno_idade_avg ON aluno (idade);
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
