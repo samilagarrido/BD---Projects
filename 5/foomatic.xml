@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<options>
+  <option>
+    <arg_shortname><en>duplex</en></arg_shortname>
+    <driver>hp1020</driver>
+  </option>
+  <option>
+    <arg_shortname><en>quality</en></arg_shortname>
+    <driver>hp1020</driver>
+  </option>
+</options>
