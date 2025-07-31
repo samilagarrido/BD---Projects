@@ -1,6 +1,7 @@
 # PostgreSQL Non-Relational Features Demo
 
 Este projeto demonstra diversos recursos não-relacionais do PostgreSQL, incluindo arrays, ranges, tipos geométricos, XML, JSON/JSONB, tipos compostos, full-text search e busca por trigramas.
+Usei o banco PostgreSQL, que é um banco relacional com recursos não-relacionais.
 
 ## Arquivos
 
