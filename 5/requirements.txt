@@ -1,0 +1,34 @@
+# Requirements para PostgreSQL Non-Relational Features Demo
+
+## Software Necessário
+
+### 1. PostgreSQL Database Server
+- PostgreSQL 10+ (recomendado: 13+)
+- Download: https://www.postgresql.org/download/
+- Para Windows: winget install PostgreSQL.PostgreSQL.17
+
+### 2. Cliente/Interface Gráfica
+- pgAdmin 4 - Interface gráfica oficial
+  - Download: https://www.pgadmin.org/download/
+  - Para Windows: winget install PostgreSQL.pgAdmin
+
+
+### pg_trgm (Trigram)
+- Para busca por similaridade e trigrams
+- Incluída na instalação padrão do PostgreSQL
+- Habilitada automaticamente pelo script setup_nonrelational_db.sql
+
+
+## Instalação (Windows)
+
+### Via winget (PowerShell como Administrador)
+```powershell
+# Instalar PostgreSQL
+winget install PostgreSQL.PostgreSQL.17
+
+# Instalar pgAdmin
+winget install PostgreSQL.pgAdmin
+
+# Adicionar PostgreSQL ao PATH (se necessário)
+$env:PATH += ";C:\Program Files\PostgreSQL\17\bin"
+```
